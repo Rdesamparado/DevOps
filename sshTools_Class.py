@@ -166,6 +166,7 @@ class Device:
                         'PX3-5040U-V2-A6K2', 'PX3-5040U-V2-A6K1', 'G2-84208-80B', 'G2-84208-80R']
             Snow_dell_swi = ['210-AEDQ']
             Snow_jnpr_swi = ['QFX5100-48S-AFI', 'QFX5120-48Y-AFI']
+            
             Snow_rcon_swi = ['ACS8008MDAC-400', 'ACS8032MDAC-400',
                              'ACS8016MDAC-400', 'ACS8048MDAC-400']
             AllServers = ['c6420', 'r640', 'R740']
