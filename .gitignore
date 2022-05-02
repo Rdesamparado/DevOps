@@ -1,0 +1,4 @@
+.vscode/settings.json
+AppServer.code-workspace
+__pycache__/sshTools_Class.cpython-39.py
+__pycache__/sshTools_Cmd.cpython-39.pyc

@@ -1,9 +1,20 @@
-#from helper import get_m_nodes, fs_webtoolkit_and_models_access #get_all_attributes
-#fs_webtoolkit_and_models_access()
+# from helper import get_m_nodes, fs_webtoolkit_and_models_access #get_all_attributes
+# fs_webtoolkit_and_models_access()
 #import sys
-#from fs_razor_core.models import ManagedNode#,Customers
+# from fs_razor_core.models import ManagedNode#,Customers
 #from find_ip import find_ip
-import ColorTerminalOutput
+#import ColorTerminalOutput
+
+class ColorTerminalOutput:
+    """Class for colored output to terminal"""
+
+    def __init__(self):
+        self.ok = '\033[92m'
+        self.error = '\033[91m'
+        self.ko = '\033[93m'
+        self.end = '\033[0m'
+        self.clear = '\033[0m'
+
 
 Terminal = ColorTerminalOutput
 ServiceNow_usage = """
@@ -90,20 +101,25 @@ Avocent_usage = """
 
 """
 
+
 def Servicenowinfo():
-    print (ServiceNow_usage)
+    print(ServiceNow_usage)
+
 
 def Robloxinfo():
-    print (Roblox_usage)
+    print(Roblox_usage)
+
 
 def Cumulusinfo():
-    print (Cumulus_usage)
+    print(Cumulus_usage)
+
 
 def Avocentinfo():
-    print (Avocent_usage)
+    print(Avocent_usage)
+
 
 class Device:
-    def __init__(self, node_id,serial,manu,model,customer,device_type,app_name,node_ip,project):
+    def __init__(self, node_id, serial, manu, model, customer, device_type, app_name, node_ip, project):
         self.node_id = node_id
         self.device_type = device_type
         self.serial = serial
@@ -138,21 +154,22 @@ class Device:
         Roblox_PW = '#Roblox2020'
         Square_User = 'admn'
         Square_PW = 'admn'
-            
+
         try:
-            Roblox_pdu = ['C2W42CE-YQME2M00/C','C2X42CE-YQME2M00/C','C1W24VT-5PPA17AC/C',
-                              'C1X24VT-5PPA17AC/C', 'C1L24VS-4PFA11F2/C','C1S24VS-4PFA11F2/C',
-                              'C1S24VS-4PFA11F2/C.RED','C1L24VS-4PFA11F2/C.BLUE']
-            Square_pdu = ['C2W42CE-DQME2M00/0C.7ft.red','C2X42CE-DQME2M00/0C.7ft.blue']
-            Snow_pdu = ['PX3-5961I2U-C8V2A6K1','PX3-5785U-V2A6K2','PX3-5961I2U-C8V2A6K2',
-                            'PX3-5961I2U-V2A6K2','PX3-5703-A6K1','PX3-5723I2-C8A6K2','PX3-5723I2-C8A6K1',
-                            'PX3-5040U-V2-A6K2','PX3-5040U-V2-A6K1']
+            Roblox_pdu = ['C2W42CE-YQME2M00/C', 'C2X42CE-YQME2M00/C', 'C1W24VT-5PPA17AC/C',
+                          'C1X24VT-5PPA17AC/C', 'C1L24VS-4PFA11F2/C', 'C1S24VS-4PFA11F2/C',
+                          'C1S24VS-4PFA11F2/C.RED', 'C1L24VS-4PFA11F2/C.BLUE']
+            Square_pdu = ['C2W42CE-DQME2M00/0C.7ft.red',
+                          'C2X42CE-DQME2M00/0C.7ft.blue']
+            Snow_pdu = ['PX3-5961I2U-C8V2A6K1', 'PX3-5785U-V2A6K2', 'PX3-5961I2U-C8V2A6K2',
+                        'PX3-5961I2U-V2A6K2', 'PX3-5703-A6K1', 'PX3-5723I2-C8A6K2', 'PX3-5723I2-C8A6K1',
+                        'PX3-5040U-V2-A6K2', 'PX3-5040U-V2-A6K1', 'G2-84208-80B', 'G2-84208-80R']
             Snow_dell_swi = ['210-AEDQ']
-            Snow_jnpr_swi = ['QFX5100-48S-AFI','QFX5120-48Y-AFI']
-            Snow_rcon_swi = ['ACS8008MDAC-400','ACS8032MDAC-400']
-            AllServers = ['c6420','r640','R740']
+            Snow_jnpr_swi = ['QFX5100-48S-AFI', 'QFX5120-48Y-AFI']
+            Snow_rcon_swi = ['ACS8008MDAC-400', 'ACS8032MDAC-400',
+                             'ACS8016MDAC-400', 'ACS8048MDAC-400']
+            AllServers = ['c6420', 'r640', 'R740']
             Square_swi = ['DCS-7050TX2-128-R']
-            
 
             if self.model in (Square_pdu):
                 user = Square_User
